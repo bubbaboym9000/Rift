@@ -1,0 +1,50 @@
+{
+  "heartbeat": {
+    "sounds": [
+      "riftwatcher:heartbeat"
+    ],
+    "subtitle": "subtitles.riftwatcher.heartbeat"
+  },
+  "drone": {
+    "sounds": [
+      "riftwatcher:drone"
+    ],
+    "subtitle": "subtitles.riftwatcher.drone"
+  },
+  "rift_tear": {
+    "sounds": [
+      "riftwatcher:rift_tear"
+    ],
+    "subtitle": "subtitles.riftwatcher.rift_tear"
+  },
+  "stare": {
+    "sounds": [
+      "riftwatcher:stare"
+    ],
+    "subtitle": "subtitles.riftwatcher.stare"
+  },
+  "scream": {
+    "sounds": [
+      "riftwatcher:scream"
+    ],
+    "subtitle": "subtitles.riftwatcher.scream"
+  },
+  "whisper": {
+    "sounds": [
+      "riftwatcher:whisper"
+    ],
+    "subtitle": "subtitles.riftwatcher.whisper"
+  },
+  "breath": {
+    "sounds": [
+      "riftwatcher:breath"
+    ],
+    "subtitle": "subtitles.riftwatcher.breath"
+  },
+  "music_box": {
+    "sounds": [
+      "riftwatcher:music_box"
+    ],
+    "subtitle": "subtitles.riftwatcher.music_box"
+  }
+}

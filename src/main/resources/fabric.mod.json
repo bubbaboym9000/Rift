@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "riftwatcher",
+  "version": "${version}",
+  "name": "Rift Watcher",
+  "description": "Reality has fractures, and something on the other side has noticed you. A survival horror mod: a hidden Dread meter, a stalker that only moves when you look away, and a world that slowly stops being safe.",
+  "authors": ["bubbaboym9000"],
+  "license": "MIT",
+  "icon": "assets/riftwatcher/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.riftwatcher.RiftWatcherMod"],
+    "client": ["com.riftwatcher.client.RiftWatcherClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

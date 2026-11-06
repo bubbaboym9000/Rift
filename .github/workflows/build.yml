@@ -1,0 +1,51 @@
+name: Build Rift Watcher jar
+
+on:
+  push:
+    branches: [riftwatcher]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Build
+        run: |
+          chmod +x gradlew
+          ./gradlew build
+
+      - name: Pick the mod jar (not the sources jar)
+        run: |
+          mkdir dist
+          for f in build/libs/*.jar; do
+            case "$f" in
+              *-sources.jar|*-dev.jar) ;;
+              *) cp "$f" dist/ ;;
+            esac
+          done
+          ls -la dist
+
+      - name: Keep the jar as a workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: riftwatcher-jar
+          path: dist/*.jar
+
+      - name: Publish the jar as a release (direct download link)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          target_commitish: ${{ github.sha }}
+          name: Rift Watcher build ${{ github.run_number }}
+          body: Download the .jar below (the one without "sources" in its name) and put it in your mods folder with Fabric API.
+          files: dist/*.jar
