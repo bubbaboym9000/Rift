@@ -32,6 +32,7 @@ public final class Sfx {
     /** A sound with no direction, as if it is inside the player's own head. */
     public static void inHead(ServerPlayer player, SoundEvent sound, SoundSource source,
                               float volume, float pitch) {
-        player.playNotifySound(sound, source, volume, pitch);
+        // Played at the listener's own head position, so it has no direction.
+        at(player, sound, source, player.getX(), player.getEyeY(), player.getZ(), volume, pitch);
     }
 }
